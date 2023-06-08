@@ -23,5 +23,7 @@ COPY . .
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
+EXPOSE 5000
+
 # Start the Flask application with Flask-SocketIO
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
