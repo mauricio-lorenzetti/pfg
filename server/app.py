@@ -1,9 +1,10 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import eventlet
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret'
-socketio = SocketIO(app)
+app.config["DEBUG"] = True
+socketio = SocketIO(app, async_mode='eventlet', cors_allowed_origins="*")
 
 last_heart_rate = None
 
@@ -23,6 +24,7 @@ def handle_disconnect():
 def handle_heart_rate(heart_rate):
     global last_heart_rate
     last_heart_rate = heart_rate
+    print('Heart rate logged:', last_heart_rate)
     socketio.emit('new_heart_rate', heart_rate, broadcast=True)
 
 if __name__ == '__main__':
