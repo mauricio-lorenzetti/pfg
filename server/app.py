@@ -25,7 +25,7 @@ def handle_heart_rate(heart_rate):
     global last_heart_rate
     last_heart_rate = heart_rate
     print('Heart rate logged:', last_heart_rate)
-    socketio.emit('new_heart_rate', heart_rate, broadcast=True)
+    socketio.emit('new_heart_rate', heart_rate)
 
 if __name__ == '__main__':
     socketio.run(app)
