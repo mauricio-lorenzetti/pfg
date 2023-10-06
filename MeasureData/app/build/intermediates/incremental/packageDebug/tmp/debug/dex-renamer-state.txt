@@ -1,11 +1,11 @@
-#Thu Jun 15 15:22:41 BRT 2023
-base.0=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
-base.3=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
-base.4=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.5=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
-base.6=/Users/mauricio/code/health-samples/health-services/MeasureData/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Thu Oct 05 16:57:19 BRT 2023
+base.0=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.5=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.6=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex

@@ -4,7 +4,7 @@
             "outputFile": "com.example.measuredata.app-mergeDebugResources-34:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/mauricio/.gradle/caches/transforms-3/ba91edf2c1fcd698c7c38d7343aeed5c/transformed/appcompat-1.2.0/res/values-port/values-port.xml",
+                    "source": "C:\\Users\\Mauk\\.gradle\\caches\\transforms-3\\ba91edf2c1fcd698c7c38d7343aeed5c\\transformed\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
