@@ -6,7 +6,7 @@ import java.lang.System;
  * Holds most of the interaction logic and UI state for the app.
  */
 @dagger.hilt.android.lifecycle.HiltViewModel
-@kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u000f\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0011\u0010\u001a\u001a\u00020\u001bH\u0087@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010\u001cJ\u0010\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\tH\u0002R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\t0\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0017\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0017\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\t0\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u000b0\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000fR\u001c\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019\u0082\u0002\u0004\n\u0002\b\u0019\u00a8\u0006\u001f"}, d2 = {"Lcom/example/measuredata/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "healthServicesManager", "Lcom/example/measuredata/HealthServicesManager;", "(Lcom/example/measuredata/HealthServicesManager;)V", "_heartRateAvailable", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/health/services/client/data/DataTypeAvailability;", "_heartRateBpm", "", "_uiState", "Lcom/example/measuredata/UiState;", "heartRateAvailable", "Lkotlinx/coroutines/flow/StateFlow;", "getHeartRateAvailable", "()Lkotlinx/coroutines/flow/StateFlow;", "heartRateBpm", "getHeartRateBpm", "uiState", "getUiState", "webSocket", "Lokhttp3/WebSocket;", "getWebSocket", "()Lokhttp3/WebSocket;", "setWebSocket", "(Lokhttp3/WebSocket;)V", "measureHeartRate", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "sendHeartRateToServer", "heartRate", "app_debug"})
+@kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u000f\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0011\u0010\u0014\u001a\u00020\u0015H\u0087@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010\u0016J\u0010\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\tH\u0002R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\t0\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0017\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0017\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\t0\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u000b0\r\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000f\u0082\u0002\u0004\n\u0002\b\u0019\u00a8\u0006\u0019"}, d2 = {"Lcom/example/measuredata/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "healthServicesManager", "Lcom/example/measuredata/HealthServicesManager;", "(Lcom/example/measuredata/HealthServicesManager;)V", "_heartRateAvailable", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/health/services/client/data/DataTypeAvailability;", "_heartRateBpm", "", "_uiState", "Lcom/example/measuredata/UiState;", "heartRateAvailable", "Lkotlinx/coroutines/flow/StateFlow;", "getHeartRateAvailable", "()Lkotlinx/coroutines/flow/StateFlow;", "heartRateBpm", "getHeartRateBpm", "uiState", "getUiState", "measureHeartRate", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "sendHeartRateToServer", "heartRate", "app_debug"})
 public final class MainViewModel extends androidx.lifecycle.ViewModel {
     private final com.example.measuredata.HealthServicesManager healthServicesManager = null;
     private final kotlinx.coroutines.flow.MutableStateFlow<com.example.measuredata.UiState> _uiState = null;
@@ -18,8 +18,6 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     private final kotlinx.coroutines.flow.MutableStateFlow<java.lang.Double> _heartRateBpm = null;
     @org.jetbrains.annotations.NotNull
     private final kotlinx.coroutines.flow.StateFlow<java.lang.Double> heartRateBpm = null;
-    @org.jetbrains.annotations.Nullable
-    private okhttp3.WebSocket webSocket;
     
     @javax.inject.Inject
     public MainViewModel(@org.jetbrains.annotations.NotNull
@@ -40,15 +38,6 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     @org.jetbrains.annotations.NotNull
     public final kotlinx.coroutines.flow.StateFlow<java.lang.Double> getHeartRateBpm() {
         return null;
-    }
-    
-    @org.jetbrains.annotations.Nullable
-    public final okhttp3.WebSocket getWebSocket() {
-        return null;
-    }
-    
-    public final void setWebSocket(@org.jetbrains.annotations.Nullable
-    okhttp3.WebSocket p0) {
     }
     
     private final void sendHeartRateToServer(double heartRate) {

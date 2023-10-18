@@ -26,9 +26,11 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.example.measuredata.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.collect
-import okhttp3.*
+import io.socket.client.IO;
+import io.socket.client.Socket;
+
 
 /**
  * Activity displaying the app UI. Notably, this binds data from [MainViewModel] to views on screen,
@@ -41,9 +43,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var permissionLauncher: ActivityResultLauncher<String>
 
     private val viewModel: MainViewModel by viewModels()
-
-    private lateinit var webSocketListener: WebSocketListener
-    private val okHttpClient = OkHttpClient()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +68,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+        // The following lines connects the Android app to the server.
+        SocketHandler.setSocket()
+        SocketHandler.establishConnection()
+
         // Bind viewmodel state to the UI.
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect {
@@ -89,20 +92,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        webSocketListener = WebSocketListener()
-        viewModel.webSocket = okHttpClient.newWebSocket(createRequest(), webSocketListener)
         permissionLauncher.launch(android.Manifest.permission.BODY_SENSORS)
-    }
-
-    private fun createRequest(): Request {
-        // piesocket.com credentials
-        val CLUSTER_ID = "s9203.nyc1"
-        val API_KEY = "uEH8CHNettvVmFD9sY5NLPhjyPRKjglTOq74VsLG"
-        val websocketURL = "wss://${CLUSTER_ID}.piesocket.com/v3/1?api_key=${API_KEY}"
-
-        return Request.Builder()
-            .url(websocketURL)
-            .build()
     }
 
     private fun updateViewVisiblity(uiState: UiState) {
@@ -121,37 +111,5 @@ class MainActivity : AppCompatActivity() {
             binding.lastMeasuredValue.isVisible = it
             binding.heart.isVisible = it
         }
-    }
-}
-
-
-class WebSocketListener(): okhttp3.WebSocketListener() {
-
-    private val TAG = "Test"
-
-    override fun onOpen(webSocket: WebSocket, response: Response) {
-        super.onOpen(webSocket, response)
-        webSocket.send("Android Device Connected")
-        Log.d(TAG, "onOpen:")
-    }
-
-    override fun onMessage(webSocket: WebSocket, text: String) {
-        super.onMessage(webSocket, text)
-        Log.d(TAG, "onMessage: $text")
-    }
-
-    override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
-        super.onClosing(webSocket, code, reason)
-        Log.d(TAG, "onClosing: $code $reason")
-    }
-
-    override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
-        super.onClosed(webSocket, code, reason)
-        Log.d(TAG, "onClosed: $code $reason")
-    }
-
-    override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-        Log.d(TAG, "onFailure: ${t.message} $response")
-        super.onFailure(webSocket, t, response)
     }
 }

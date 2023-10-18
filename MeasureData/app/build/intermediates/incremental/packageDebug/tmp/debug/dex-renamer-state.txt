@@ -1,4 +1,4 @@
-#Thu Oct 05 16:57:19 BRT 2023
+#Wed Oct 18 19:27:53 BRT 2023
 base.0=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Mauk\\Documents\\GitHub\\pfg\\MeasureData\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

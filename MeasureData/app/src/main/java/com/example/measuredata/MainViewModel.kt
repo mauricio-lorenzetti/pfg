@@ -50,8 +50,6 @@ class MainViewModel @Inject constructor(
     private val _heartRateBpm = MutableStateFlow(0.0)
     val heartRateBpm: StateFlow<Double> = _heartRateBpm
 
-    public var webSocket: WebSocket? = null
-
     init {
         // Check that the device has the heart rate capability and progress to the next state
         // accordingly.
@@ -65,7 +63,8 @@ class MainViewModel @Inject constructor(
     }
 
     private fun sendHeartRateToServer(heartRate: Double) {
-        webSocket?.send(heartRate.toString())
+        val mSocket = SocketHandler.getSocket()
+        mSocket.emit("heart_rate", heartRate)
     }
 
     @ExperimentalCoroutinesApi
