@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.measuredata.app-mergeDebugResources-34:/values-round-v23/values-round-v23.xml",
+            "outputFile": "com.example.measuredata.app-mergeDebugResources-40:/values-round-v23/values-round-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mauk\\.gradle\\caches\\transforms-3\\2c951f437604cc24abf1e076bc77974f\\transformed\\wear-1.2.0\\res\\values-round-v23\\values-round-v23.xml",
+                    "source": "C:\\Users\\Mauk\\.gradle\\caches\\transforms-3\\f5728e1d1ff17db8d968eaebd29ac15f\\transformed\\wear-1.3.0\\res\\values-round-v23\\values-round-v23.xml",
                     "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,118,204",
-                        "endColumns": "62,85,79",
-                        "endOffsets": "113,199,279"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "84",
+                        "endOffsets": "135"
                     }
                 }
             ]
