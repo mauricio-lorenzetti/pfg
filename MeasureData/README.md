@@ -24,17 +24,15 @@ from a shell. This will mimic the user performing an activity and generating hea
 the app UI or logcat messages to see these data updates.
 
 ```shell
-adb shell am broadcast \
--a "whs.USE_SYNTHETIC_PROVIDERS" \
-com.google.android.wearable.healthservices
+adb shell am broadcast \ -a "whs.USE_SYNTHETIC_PROVIDERS" \ com.google.android.wearable.healthservices
 ```
 
 To see different heart rate values, try simulating different exercises:
 ```shell
 # walking
-adb shell am broadcast \
--a "whs.synthetic.user.START_WALKING" \
-com.google.android.wearable.healthservices
+adb shell am broadcast \ -a "whs.synthetic.user.START_WALKING" \ com.google.android.wearable.healthservices
+
+adb shell am broadcast \ -a "whs.synthetic.user.START_RUNNING" \ com.google.android.wearable.healthservices
 
 # running
 adb shell am broadcast \

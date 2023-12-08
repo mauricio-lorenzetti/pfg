@@ -338,3 +338,11 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/java,linux,macos,windows,android,intellij,androidstudio
+server/heart_rate_log.txt
+*.pyc
+*.pyc
+*.kapt_metadata
+*.class
+*.bin
+*.tab
+*.flat

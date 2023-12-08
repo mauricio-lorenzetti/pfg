@@ -23,8 +23,8 @@ def handle_disconnect():
 
 @socketio.on('heart_rate')
 def handle_heart_rate(heart_rate):
-	global last_heart_rate
-	
+    global last_heart_rate
+    
     last_heart_rate = heart_rate
     timestamp = datetime.datetime.now().strftime('%H:%M:%S')
     log_entry = f'{timestamp} - {last_heart_rate}'
